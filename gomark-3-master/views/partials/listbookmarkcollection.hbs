@@ -1,0 +1,13 @@
+{{#each bookmarklistcollection}}
+  <section class="ui stacked segment">
+    <h2 class="ui header">
+      {{title}} ( {{bookmarks.length}} )
+    </h2>
+    <a href="/bookmarklist/{{id}}" class="ui icon button">
+      <i class="icon folder open"></i>
+    </a>
+    <a href="/dashboard/deletebookmarklist/{{id}}" class="ui icon button">
+      <i class="icon trash"></i>
+    </a>
+  </section>
+{{/each}}

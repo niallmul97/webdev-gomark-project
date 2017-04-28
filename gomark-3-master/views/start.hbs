@@ -1,0 +1,37 @@
+{{> menu}}
+
+<section class="ui center aligned middle aligned two column grid segment">
+  <section class="column">
+    <h1 class="ui header">
+      {{ title }}
+    </h1>
+    <p>
+      {{ description }}
+    </p>
+  </section>
+  <section class="column">
+    <img class="ui image" src="/images/bookmark.png">
+  </section>
+</section>
+
+<div class="ui center aligned grid segment">
+  <div class="ui header"> </div>
+  <div class="ui statistics">
+    <div class="statistic">
+      <div class="value">
+        <i class="book icon"></i> {{totalNumberOfCollections}}
+      </div>
+      <div class="label">
+        Bookmark Categories
+      </div>
+    </div>
+    <div class="statistic">
+      <div class="value">
+        <i class="bookmark icon"></i> {{totalBookmarks}}
+      </div>
+      <div class="label">
+        Bookmarks
+      </div>
+    </div>
+  </div>
+</div>
