@@ -30,6 +30,7 @@ const bookmarklist = {
       id: uuid(),
       title: request.body.title,
       link: request.body.link,
+      public: true,
       summary: request.body.summary,
     };
     bookmarklistStore.addBookmark(bookmarklistId, newSong);

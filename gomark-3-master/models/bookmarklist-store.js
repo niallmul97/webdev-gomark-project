@@ -2,6 +2,7 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
+const userStore = require('./user-store.js');
 
 const bookmarklistStore = {
 
@@ -49,9 +50,26 @@ const bookmarklistStore = {
     return total;
   },
 
+  getCurrentUserBookmarklist(email){
+    const user = userStore.getCurrentUser(email);
+    const bookmarklist = this.getUserBookmarklist(user);
+    return bookmarklist.length;
+  },
+
   getUserBookmarklist(userid){
     return this.store.findBy(this.collection,{userid: userid});
-  }
-};
+  },
+
+  getCurrentUserBookmarks(email){
+    let bookmarks = 0;
+    const user = userStore.getCurrentUser(email);
+    const bookmarklist = this.getUserBookmarklist(user);
+    for(let i=0; i< bookmarklist.length; i++) {
+        bookmarks += bookmarklist[i].bookmarks.length;
+    }
+    return bookmarks;
+    }
+
+}
 
 module.exports = bookmarklistStore;

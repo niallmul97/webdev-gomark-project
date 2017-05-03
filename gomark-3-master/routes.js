@@ -7,7 +7,7 @@ const start = require('./controllers/start');
 const dashboard = require('./controllers/dashboard.js');
 const about = require('./controllers/about.js');
 const bookmarklist = require('./controllers/bookmarklist.js');
-const accounts =require ('./controllers/accounts.js');
+const accounts = require ('./controllers/accounts.js');
 
 router.get('/start', start.index);
 

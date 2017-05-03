@@ -36,6 +36,20 @@ const dashboard = {
     bookmarklistStore.addBookmarklist(newBookmarklist);
     response.redirect('/dashboard');
   },
+
+  makeCollectionPublic(request, response){
+    const bookmarklistId = request.params.id;
+    const bookmarklist = bookmarklistStore.getBookmarklistCollection(bookmarklistId);
+    bookmarklist.public = true;
+    response.redirect('/dashboard');
+  },
+
+  makeCollectionPrivate(request, response){
+    const bookmarklistId = request.params.id;
+    const bookmarklist = bookmarklistStore.getBookmarklistCollection(bookmarklistId);
+    bookmarklist.public = false;
+    response .redirect('dashboard');
+  }
 };
 
 module.exports = dashboard;
